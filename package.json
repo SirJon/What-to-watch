@@ -1,20 +1,36 @@
 {
   "scripts": {
     "eslint": "eslint --ext .jsx --ext .js src/",
-    "test": "npm run eslint",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "test": "npm run eslint && jest",
+    "dev": "cross-env NODE_ENV=developmen webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "serve": "cross-env NODE_ENV=development webpack serve --mode development --progress --hot --open",
+    "start": "npm run test && npm run serve"
   },
   "devDependencies": {
     "@babel/core": "7.20.5",
     "@babel/preset-env": "7.20.2",
     "@babel/preset-react": "7.18.6",
+    "@cfaester/enzyme-adapter-react-18": "0.6.0",
+    "babel-jest": "29.3.1",
     "babel-loader": "9.1.0",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "11.0.0",
+    "cross-env": "7.0.3",
+    "enzyme": "3.11.0",
     "eslint": "8.29.0",
     "eslint-config-htmlacademy": "8.0.0",
     "eslint-plugin-react": "7.31.11",
+    "html-webpack-plugin": "5.5.0",
+    "jest": "29.3.1",
+    "react-test-renderer": "18.2.0",
     "webpack": "5.75.0",
     "webpack-cli": "5.0.1",
     "webpack-dev-server": "4.11.1"
+  },
+  "dependencies": {
+    "prop-types": "15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }

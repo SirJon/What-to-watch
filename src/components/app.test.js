@@ -1,6 +1,6 @@
+import renderer from 'react-test-renderer';
+import App from "./App";
 import React from "react";
-import App from "./components/App";
-import {createRoot} from 'react-dom/client';
 
 const films = [
   {
@@ -21,9 +21,13 @@ const films = [
   },
 ];
 
-const root = createRoot(document.getElementById(`root`));
-root.render(
-    <App
-      films={films}
-    />
-);
+it(`render`, () => {
+  const tree = renderer
+    .create(
+        <App
+          films={films}
+        />
+    ).toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
