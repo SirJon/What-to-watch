@@ -1,7 +1,3 @@
-import React from "react";
-import App from "./components/App/App";
-import {createRoot} from 'react-dom/client';
-
 const films = [
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -21,9 +17,4 @@ const films = [
   },
 ];
 
-const root = createRoot(document.getElementById(`root`));
-root.render(
-    <App
-      films={films}
-    />
-);
+export default films;

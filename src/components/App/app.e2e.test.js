@@ -1,6 +1,7 @@
 import React from "react";
-import App from "./components/App/App";
-import {createRoot} from 'react-dom/client';
+import Enzyme, {shallow} from 'enzyme';
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import App from "./App";
 
 const films = [
   {
@@ -21,9 +22,9 @@ const films = [
   },
 ];
 
-const root = createRoot(document.getElementById(`root`));
-root.render(
-    <App
-      films={films}
-    />
-);
+it(`Test e2e`, () => {
+  const app = shallow( //mount
+      <App
+        films={films}
+      />)
+});
