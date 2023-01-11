@@ -31,5 +31,6 @@ it(`Test e2e`, () => {
       <Films
         films={films}
       />);
-  const filmsBlock = app.find(`.small-movie-card`)
+  const filmsBlock = app.find(`.small-movie-card`);
+  expect(filmsBlock).toHaveLength(films.length);
 });

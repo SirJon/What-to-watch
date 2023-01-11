@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import VideoPlayer from "../VideoPlayer/VideoPlayer.jsx";
 
 class Films extends PureComponent {
   constructor(props) {
@@ -9,33 +10,25 @@ class Films extends PureComponent {
     };
   }
 
+  onMouseOver = (name) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      films: `${name}`,
+    }));
+  }
+
   render() {
     return (
       <div className="catalog__movies-list">
         {this.props.films.map((filmsData, i) => {
           const { name, img } = filmsData;
           return (
-            <article
-              className="small-movie-card catalog__movies-card"
+            <VideoPlayer
               key={name + i}
-              onMouseOver={() => {
-                this.setState((prevState) => ({
-                  ...prevState,
-                  films: `${name}`,
-                }));
-              }}
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <div className="small-movie-card__image">
-                <img src={img}
-                  alt={name} width="280" height="175" />
-              </div>
-              <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="#">{name}</a>
-              </h3>
-            </article>
+              name={name}
+              img={img}
+              onMouse={this.onMouseOver}
+            />
           );
         })}
       </div>
