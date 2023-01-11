@@ -1,9 +1,12 @@
-import React, { PureComponent } from "react";
+import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
+import Films from './Films/Films.jsx';
 
 class App extends PureComponent {
   constructor(props) {
     super(props);
+
+    this.props = props;
 
     this.state = {
       films: `undefined`,
@@ -145,34 +148,7 @@ class App extends PureComponent {
               </li>
             </ul>
 
-            <div className="catalog__movies-list">
-              {this.props.films.map((filmsData, i) => {
-                const { name, img } = filmsData;
-                return (
-                  <article
-                    className="small-movie-card catalog__movies-card"
-                    key={name + i}
-                    onMouseOver={() => {
-                      this.setState((prevState) => ({
-                        ...prevState,
-                        films: `${name}`,
-                      }));
-                    }}
-                    onClick = {(e) => {
-                      e.preventDefault();
-                    }}
-                  >
-                    <div className="small-movie-card__image">
-                      <img src={img}
-                        alt={name} width="280" height="175" />
-                    </div>
-                    <h3 className="small-movie-card__title">
-                      <a className="small-movie-card__link" href="#">{name}</a>
-                    </h3>
-                  </article>
-                );
-              })}
-            </div>
+            <Films films={this.props.films}></Films>
 
             <div className="catalog__more">
               <button className="catalog__button" type="button">Show more</button>

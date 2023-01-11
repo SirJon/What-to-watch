@@ -1,3 +1,7 @@
+import renderer from 'react-test-renderer';
+import React from "react";
+import Films from './Films';
+
 const films = [
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -15,10 +19,17 @@ const films = [
     name: `Aviator`,
     img: `img/aviator.jpg`,
   },
-  {
-    name: `Snatch`,
-    img: `img/snatch.jpg`,
-  },
 ];
 
-export default films;
+describe(`Films`, () => {
+  it(`Render`, () => {
+    const tree = renderer
+      .create(
+        <Films
+          films={films}
+        />
+      ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+});

@@ -21,13 +21,15 @@ const films = [
   },
 ];
 
-it(`render`, () => {
-  const tree = renderer
-    .create(
+describe(`App`, () => {
+  it(`Should render correctly with movies titles array`, () => {
+    const tree = renderer
+      .create(
         <App
           films={films}
         />
-    ).toJSON();
+      ).toJSON();
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
 });
