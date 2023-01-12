@@ -244,18 +244,20 @@ exports[`App Should render correctly with movies titles array 1`] = `
       >
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
+          onMouseOut={[Function]}
           onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Fantastic Beasts: The Crimes of Grindelwald"
+            <video
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              muted="muted"
+              poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
               width="280"
-            />
+            >
+              <source />
+            </video>
           </div>
           <h3
             className="small-movie-card__title"
@@ -263,6 +265,7 @@ exports[`App Should render correctly with movies titles array 1`] = `
             <a
               className="small-movie-card__link"
               href="#"
+              onClick={[Function]}
             >
               Fantastic Beasts: The Crimes of Grindelwald
             </a>
@@ -270,18 +273,20 @@ exports[`App Should render correctly with movies titles array 1`] = `
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
+          onMouseOut={[Function]}
           onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Bohemian Rhapsody"
+            <video
               height="175"
-              src="img/bohemian-rhapsody.jpg"
+              muted="muted"
+              poster="img/bohemian-rhapsody.jpg"
               width="280"
-            />
+            >
+              <source />
+            </video>
           </div>
           <h3
             className="small-movie-card__title"
@@ -289,6 +294,7 @@ exports[`App Should render correctly with movies titles array 1`] = `
             <a
               className="small-movie-card__link"
               href="#"
+              onClick={[Function]}
             >
               Bohemian Rhapsody
             </a>
@@ -296,18 +302,20 @@ exports[`App Should render correctly with movies titles array 1`] = `
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
+          onMouseOut={[Function]}
           onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Macbeth"
+            <video
               height="175"
-              src="img/macbeth.jpg"
+              muted="muted"
+              poster="img/macbeth.jpg"
               width="280"
-            />
+            >
+              <source />
+            </video>
           </div>
           <h3
             className="small-movie-card__title"
@@ -315,6 +323,7 @@ exports[`App Should render correctly with movies titles array 1`] = `
             <a
               className="small-movie-card__link"
               href="#"
+              onClick={[Function]}
             >
               Macbeth
             </a>
@@ -322,18 +331,20 @@ exports[`App Should render correctly with movies titles array 1`] = `
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
+          onMouseOut={[Function]}
           onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Aviator"
+            <video
               height="175"
-              src="img/aviator.jpg"
+              muted="muted"
+              poster="img/aviator.jpg"
               width="280"
-            />
+            >
+              <source />
+            </video>
           </div>
           <h3
             className="small-movie-card__title"
@@ -341,6 +352,7 @@ exports[`App Should render correctly with movies titles array 1`] = `
             <a
               className="small-movie-card__link"
               href="#"
+              onClick={[Function]}
             >
               Aviator
             </a>

@@ -1,13 +1,11 @@
 import React, { PureComponent } from "react";
+import PropTypes from 'prop-types';
 
 class VideoPlayer extends PureComponent {
   constructor(props) {
     super(props);
     this.video = React.createRef();
     this.timer
-  }
-  componentDidMount() {
-    // this.video.current.play();
   }
   playVideo(video) {
     this.timer = setTimeout(() => {
@@ -19,13 +17,13 @@ class VideoPlayer extends PureComponent {
     video.load();
   };
   render() {
-    const { name, img, onMouse } = this.props;
+    const { name, img, video, onMouse } = this.props;
     return (
       <article
         className="small-movie-card catalog__movies-card"
         onMouseOver={() => {
           onMouse(name);
-          this.playVideo(this.video.current)
+          this.playVideo(this.video.current);
         }
         }
         onMouseOut={() => this.stopVideo(this.video.current)}
@@ -38,15 +36,26 @@ class VideoPlayer extends PureComponent {
             ref={this.video}
             muted="muted"
           >
-            <source src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4" />
+            <source src={video} />
           </video>
         </div>
         <h3 className="small-movie-card__title">
-          <a className="small-movie-card__link" href="#">{name}</a>
+          <a
+            className="small-movie-card__link"
+            href="#"
+            onClick={(e) => e.preventDefault()}
+          >{name}</a>
         </h3>
       </article>
     )
   }
+};
+
+VideoPlayer.propTypes = {
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  video: PropTypes.string.isRequired,
+  onMouse: PropTypes.func.isRequired,
 };
 
 export default VideoPlayer;

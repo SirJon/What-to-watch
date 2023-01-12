@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import PropTypes from 'prop-types';
 import VideoPlayer from "../VideoPlayer/VideoPlayer.jsx";
 
 class Films extends PureComponent {
@@ -21,12 +22,13 @@ class Films extends PureComponent {
     return (
       <div className="catalog__movies-list">
         {this.props.films.map((filmsData, i) => {
-          const { name, img } = filmsData;
+          const { name, img, video } = filmsData;
           return (
             <VideoPlayer
               key={name + i}
               name={name}
               img={img}
+              video={video}
               onMouse={this.onMouseOver}
             />
           );
@@ -34,6 +36,14 @@ class Films extends PureComponent {
       </div>
     );
   }
+};
+
+Films.propTypes = {
+  films: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    img: PropTypes.string,
+    video: PropTypes.string,
+  })).isRequired,
 };
 
 export default Films;
