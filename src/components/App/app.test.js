@@ -4,20 +4,14 @@ import React from "react";
 
 const films = [
   {
-    name: `Fantastic Beasts: The Crimes of Grindelwald`,
-    img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    name: `1`,
+    img: `2`,
+    video: `3`,
   },
   {
-    name: `Bohemian Rhapsody`,
-    img: `img/bohemian-rhapsody.jpg`,
-  },
-  {
-    name: `Macbeth`,
-    img: `img/macbeth.jpg`,
-  },
-  {
-    name: `Aviator`,
-    img: `img/aviator.jpg`,
+    name: `1`,
+    img: `2`,
+    video: `3`,
   },
 ];
 

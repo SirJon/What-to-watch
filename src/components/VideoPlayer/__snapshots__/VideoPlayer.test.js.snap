@@ -12,9 +12,12 @@ exports[`Films Render 1`] = `
     <video
       height="175"
       muted="muted"
+      poster="2"
       width="280"
     >
-      <source />
+      <source
+        src="3"
+      />
     </video>
   </div>
   <h3
@@ -24,7 +27,9 @@ exports[`Films Render 1`] = `
       className="small-movie-card__link"
       href="#"
       onClick={[Function]}
-    />
+    >
+      1
+    </a>
   </h3>
 </article>
 `;

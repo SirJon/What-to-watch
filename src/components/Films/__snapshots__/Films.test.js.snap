@@ -1,124 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Films Render 1`] = `
-<div
-  className="catalog__movies-list"
+<section
+  className="catalog"
 >
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+  <h2
+    className="catalog__title visually-hidden"
   >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        height="175"
-        muted="muted"
-        poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-        width="280"
-      >
-        <source />
-      </video>
-    </div>
-    <h3
-      className="small-movie-card__title"
+    Catalog
+  </h2>
+  <ul
+    className="catalog__genres-list"
+  >
+    <li
+      className="catalog__genres-item catalog__genres-item--active"
     >
       <a
-        className="small-movie-card__link"
+        className="catalog__genres-link"
         href="#"
         onClick={[Function]}
       >
-        Fantastic Beasts: The Crimes of Grindelwald
+        All genres
       </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        height="175"
-        muted="muted"
-        poster="img/bohemian-rhapsody.jpg"
-        width="280"
-      >
-        <source />
-      </video>
-    </div>
-    <h3
-      className="small-movie-card__title"
+    </li>
+    <li
+      className="catalog__genres-item "
     >
       <a
-        className="small-movie-card__link"
+        className="catalog__genres-link"
         href="#"
         onClick={[Function]}
-      >
-        Bohemian Rhapsody
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+      />
+    </li>
+  </ul>
+  <div
+    className="catalog__movies-list"
   >
-    <div
-      className="small-movie-card__image"
+    <article
+      className="small-movie-card catalog__movies-card"
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
     >
-      <video
-        height="175"
-        muted="muted"
-        poster="img/macbeth.jpg"
-        width="280"
+      <div
+        className="small-movie-card__image"
       >
-        <source />
-      </video>
-    </div>
-    <h3
-      className="small-movie-card__title"
+        <video
+          height="175"
+          muted="muted"
+          poster="2"
+          width="280"
+        >
+          <source
+            src="3"
+          />
+        </video>
+      </div>
+      <h3
+        className="small-movie-card__title"
+      >
+        <a
+          className="small-movie-card__link"
+          href="#"
+          onClick={[Function]}
+        >
+          1
+        </a>
+      </h3>
+    </article>
+    <article
+      className="small-movie-card catalog__movies-card"
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
     >
-      <a
-        className="small-movie-card__link"
-        href="#"
-        onClick={[Function]}
+      <div
+        className="small-movie-card__image"
       >
-        Macbeth
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+        <video
+          height="175"
+          muted="muted"
+          poster="2"
+          width="280"
+        >
+          <source
+            src="3"
+          />
+        </video>
+      </div>
+      <h3
+        className="small-movie-card__title"
+      >
+        <a
+          className="small-movie-card__link"
+          href="#"
+          onClick={[Function]}
+        >
+          1
+        </a>
+      </h3>
+    </article>
+  </div>
+  <div
+    className="catalog__more"
   >
-    <div
-      className="small-movie-card__image"
+    <button
+      className="catalog__button"
+      type="button"
     >
-      <video
-        height="175"
-        muted="muted"
-        poster="img/aviator.jpg"
-        width="280"
-      >
-        <source />
-      </video>
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="#"
-        onClick={[Function]}
-      >
-        Aviator
-      </a>
-    </h3>
-  </article>
-</div>
+      Show more
+    </button>
+  </div>
+</section>
 `;

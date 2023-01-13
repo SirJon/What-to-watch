@@ -16,11 +16,23 @@ class Films extends PureComponent {
       ...prevState,
       films: `${name}`,
     }));
-  }
+  };
 
   render() {
     return (
       <div className="catalog__movies-list">
+        {/* {this.props.onFilmsGet().films.map((filmsData, i) => {
+          const { name, img, video } = filmsData;
+          return (
+            <VideoPlayer
+              key={name + i}
+              name={name}
+              img={img}
+              video={video}
+              onMouse={this.onMouseOver}
+            />
+          );
+        })} */}
         {this.props.films.map((filmsData, i) => {
           const { name, img, video } = filmsData;
           return (
@@ -43,6 +55,7 @@ Films.propTypes = {
     name: PropTypes.string,
     img: PropTypes.string,
     video: PropTypes.string,
+    genre: PropTypes.string,
   })).isRequired,
 };
 

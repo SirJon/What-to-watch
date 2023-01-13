@@ -4,12 +4,19 @@ import PropTypes from 'prop-types';
 class ListOfGenres extends PureComponent {
   constructor(props) {
     super(props);
-    this.genre = [`All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`];
+    this.genre = [`All genres`, ...(new Set(this.props.films.map(it => it.genre)))];
   }
 
   withActiveClass = (genre, activeGenre = `All genres`) => {
     return genre === activeGenre ? `catalog__genres-item--active` : ``;
   };
+
+  onClickGenre = (e) => {
+    console.dir(e.target.textContent);
+    e.preventDefault();
+    this.props.onGenreClick(e.target.textContent);
+    this.props.onFilmsGet();
+  }
 
   render() {
     return (
@@ -18,9 +25,8 @@ class ListOfGenres extends PureComponent {
           return (
             <li key={it + i} className={`catalog__genres-item ${this.withActiveClass(it)}`}>
               <a
-                href="#"
                 className="catalog__genres-link"
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => this.onClickGenre(e)}
               >{it}</a>
             </li>
           )
@@ -31,6 +37,9 @@ class ListOfGenres extends PureComponent {
 };
 
 ListOfGenres.propTypes = {
+  films: PropTypes.arrayOf(PropTypes.shape({
+    genre: PropTypes.string,
+  })).isRequired,
 };
 
 export default ListOfGenres;

@@ -1,11 +1,30 @@
+import films from "./mocks/films";
+
 const initState = {
-  genres: [`All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`],
-  activGenre: `All genres`,
+  genre: `All genres`,
+  films
 };
-const ActionsCreater = {
-  changingFilterGenre: () => {},
-  getMovies: (genre) => {}
+
+export const ActionsCreater = {
+  changeGenre: (activGenre) => ({
+    type: `CHANGE_GENRE`,
+    payload: activGenre,
+  }),
+  getFilmsByGenre: () => ({
+    type: `GET_FILMS`,
+  })
 };
-const reducer = (state = initState, action) => {
-  return {...state, activGenre: action.activGenre}
-}
+
+export const reducer = (state = initState, action) => {
+  switch (action.type) {
+    case `CHANGE_GENRE`: return({...state, ...{
+      genre: action.payload
+    }});
+
+    case `GET_FILMS`: return({...state, ...{
+      films: state.films.slice().filter(film => film.genre === state.genre)
+    }})
+      
+  }
+  return state
+};

@@ -1,7 +1,9 @@
 import React, { PureComponent } from "react";
 import PropTypes from 'prop-types';
 import Films from '../Films/Films.jsx';
-import ListOfGenres from '../ListOfGenres/ListOfGenres.jsx';
+import { connect } from "react-redux";
+import { ActionsCreater } from "../../reducer.js";
+import ListOfGenres from "../ListOfGenres/ListOfGenres.jsx";
 
 class App extends PureComponent {
   constructor(props) {
@@ -115,16 +117,18 @@ class App extends PureComponent {
         <div className="page-content">
           <section className="catalog">
             <h2 className="catalog__title visually-hidden">Catalog</h2>
-
-            <ListOfGenres/>
-
-            <Films films={this.props.films}/>
-
+            <ListOfGenres
+              films={this.props.films}
+              onGenreClick={this.props.onGenreClick}
+              onFilmsGet={this.props.onFilmsGet}
+            />
+            <Films
+              films={this.props.films}
+            />
             <div className="catalog__more">
               <button className="catalog__button" type="button">Show more</button>
             </div>
           </section>
-
           <footer className="page-footer">
             <div className="logo">
               <a className="logo__link logo__link--light">
@@ -144,6 +148,21 @@ class App extends PureComponent {
   }
 }
 
+const mapStateToProps = (state, owProps) => ({
+  ...owProps,
+  genre: state.genre,
+  films: state.films,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onGenreClick: (genre) => {
+    dispatch(ActionsCreater.changeGenre(genre));
+  },
+  onFilmsGet: () => {
+    dispatch(ActionsCreater.getFilmsByGenre())
+  },
+})
+
 App.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
@@ -152,4 +171,5 @@ App.propTypes = {
   })).isRequired,
 };
 
-export default App;
+export { App };
+export default connect(mapStateToProps, mapDispatchToProps)(App);
