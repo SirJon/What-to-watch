@@ -2,7 +2,8 @@ import films from "./mocks/films";
 
 const initState = {
   genre: `All genres`,
-  films
+  films,
+  amount: 8,
 };
 
 export const ActionsCreater = {
@@ -12,7 +13,14 @@ export const ActionsCreater = {
   }),
   getFilmsByGenre: () => ({
     type: `GET_FILMS`,
-  })
+  }),
+  changeAmount: () => ({
+    type: `CHANGE_AMOUNT`,
+    payload: 8,
+  }),
+  restAmount: () => ({
+    type: `RESET_AMOUNT`,
+  }),
 };
 
 export const reducer = (state = initState, action) => {
@@ -22,8 +30,16 @@ export const reducer = (state = initState, action) => {
     }});
 
     case `GET_FILMS`: return({...state, ...{
-      films: state.films.slice().filter(film => film.genre === state.genre)
-    }})
+      films: initState.films.slice().filter(film => film.genre === state.genre || state.genre === `All genres`)
+    }});
+
+    case `CHANGE_AMOUNT`: return({...state, ...{
+      amount: state.amount + action.payload
+    }});
+
+    case `RESET_AMOUNT`: return({...state, ...{
+      amount: initState.amount
+    }});
       
   }
   return state

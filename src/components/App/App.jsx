@@ -4,6 +4,7 @@ import Films from '../Films/Films.jsx';
 import { connect } from "react-redux";
 import { ActionsCreater } from "../../reducer.js";
 import ListOfGenres from "../ListOfGenres/ListOfGenres.jsx";
+import ShowMore from "../ShowMore/ShowMore.jsx";
 
 class App extends PureComponent {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends PureComponent {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <div className="visually-hidden">
@@ -118,16 +120,20 @@ class App extends PureComponent {
           <section className="catalog">
             <h2 className="catalog__title visually-hidden">Catalog</h2>
             <ListOfGenres
+              genre={this.props.genre}
               films={this.props.films}
               onGenreClick={this.props.onGenreClick}
               onFilmsGet={this.props.onFilmsGet}
             />
             <Films
+              amount={this.props.amount}
               films={this.props.films}
             />
-            <div className="catalog__more">
-              <button className="catalog__button" type="button">Show more</button>
-            </div>
+            <ShowMore
+              films={this.props.films}
+              amount={this.props.amount}
+              onShowMoreCLick={this.props.onShowMoreCLick}
+            />
           </section>
           <footer className="page-footer">
             <div className="logo">
@@ -152,14 +158,19 @@ const mapStateToProps = (state, owProps) => ({
   ...owProps,
   genre: state.genre,
   films: state.films,
+  amount: state.amount,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onGenreClick: (genre) => {
     dispatch(ActionsCreater.changeGenre(genre));
+    dispatch(ActionsCreater.restAmount());
   },
   onFilmsGet: () => {
-    dispatch(ActionsCreater.getFilmsByGenre())
+    dispatch(ActionsCreater.getFilmsByGenre());
+  },
+  onShowMoreCLick: () => {
+    dispatch(ActionsCreater.changeAmount());
   },
 })
 

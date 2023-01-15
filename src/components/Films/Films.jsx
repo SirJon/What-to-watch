@@ -19,21 +19,10 @@ class Films extends PureComponent {
   };
 
   render() {
+    const { films, amount } = this.props;
     return (
       <div className="catalog__movies-list">
-        {/* {this.props.onFilmsGet().films.map((filmsData, i) => {
-          const { name, img, video } = filmsData;
-          return (
-            <VideoPlayer
-              key={name + i}
-              name={name}
-              img={img}
-              video={video}
-              onMouse={this.onMouseOver}
-            />
-          );
-        })} */}
-        {this.props.films.map((filmsData, i) => {
+        {films.slice(0, amount).map((filmsData, i) => {
           const { name, img, video } = filmsData;
           return (
             <VideoPlayer

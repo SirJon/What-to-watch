@@ -1,113 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Films Render 1`] = `
-<section
-  className="catalog"
+<div
+  className="catalog__movies-list"
 >
-  <h2
-    className="catalog__title visually-hidden"
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
-    Catalog
-  </h2>
-  <ul
-    className="catalog__genres-list"
-  >
-    <li
-      className="catalog__genres-item catalog__genres-item--active"
+    <div
+      className="small-movie-card__image"
+    >
+      <video
+        height="175"
+        muted="muted"
+        poster="2"
+        width="280"
+      >
+        <source
+          src="3"
+        />
+      </video>
+    </div>
+    <h3
+      className="small-movie-card__title"
     >
       <a
-        className="catalog__genres-link"
+        className="small-movie-card__link"
         href="#"
         onClick={[Function]}
       >
-        All genres
+        1
       </a>
-    </li>
-    <li
-      className="catalog__genres-item "
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <video
+        height="175"
+        muted="muted"
+        poster="2"
+        width="280"
+      >
+        <source
+          src="3"
+        />
+      </video>
+    </div>
+    <h3
+      className="small-movie-card__title"
     >
       <a
-        className="catalog__genres-link"
+        className="small-movie-card__link"
         href="#"
         onClick={[Function]}
-      />
-    </li>
-  </ul>
-  <div
-    className="catalog__movies-list"
-  >
-    <article
-      className="small-movie-card catalog__movies-card"
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <div
-        className="small-movie-card__image"
       >
-        <video
-          height="175"
-          muted="muted"
-          poster="2"
-          width="280"
-        >
-          <source
-            src="3"
-          />
-        </video>
-      </div>
-      <h3
-        className="small-movie-card__title"
-      >
-        <a
-          className="small-movie-card__link"
-          href="#"
-          onClick={[Function]}
-        >
-          1
-        </a>
-      </h3>
-    </article>
-    <article
-      className="small-movie-card catalog__movies-card"
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <div
-        className="small-movie-card__image"
-      >
-        <video
-          height="175"
-          muted="muted"
-          poster="2"
-          width="280"
-        >
-          <source
-            src="3"
-          />
-        </video>
-      </div>
-      <h3
-        className="small-movie-card__title"
-      >
-        <a
-          className="small-movie-card__link"
-          href="#"
-          onClick={[Function]}
-        >
-          1
-        </a>
-      </h3>
-    </article>
-  </div>
-  <div
-    className="catalog__more"
-  >
-    <button
-      className="catalog__button"
-      type="button"
-    >
-      Show more
-    </button>
-  </div>
-</section>
+        1
+      </a>
+    </h3>
+  </article>
+</div>
 `;
