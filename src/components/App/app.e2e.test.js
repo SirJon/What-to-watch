@@ -1,7 +1,7 @@
 import React from "react";
-import {configure, shallow} from 'enzyme';
+import { configure, shallow } from 'enzyme';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
-import App from "./App";
+import { App } from "./App";
 
 configure({
   adapter: new Adapter(),
@@ -28,7 +28,7 @@ const films = [
 
 it(`Test e2e`, () => {
   const app = shallow(
-      <App
-        films={films}
-      />);
+    <App
+      films={films}
+    />);
 });

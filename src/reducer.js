@@ -18,7 +18,7 @@ export const ActionsCreater = {
     type: `CHANGE_AMOUNT`,
     payload: 8,
   }),
-  restAmount: () => ({
+  resetAmount: () => ({
     type: `RESET_AMOUNT`,
   }),
 };
@@ -30,7 +30,7 @@ export const reducer = (state = initState, action) => {
     }});
 
     case `GET_FILMS`: return({...state, ...{
-      films: initState.films.slice().filter(film => film.genre === state.genre || state.genre === `All genres`)
+      films: initState.films.filter(film => film.genre === state.genre || state.genre === `All genres`)
     }});
 
     case `CHANGE_AMOUNT`: return({...state, ...{

@@ -18,7 +18,6 @@ class App extends PureComponent {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <div className="visually-hidden">
@@ -150,6 +149,7 @@ class App extends PureComponent {
           </footer>
         </div>
       </div>
+      
     );
   }
 }
@@ -164,7 +164,7 @@ const mapStateToProps = (state, owProps) => ({
 const mapDispatchToProps = (dispatch) => ({
   onGenreClick: (genre) => {
     dispatch(ActionsCreater.changeGenre(genre));
-    dispatch(ActionsCreater.restAmount());
+    dispatch(ActionsCreater.resetAmount());
   },
   onFilmsGet: () => {
     dispatch(ActionsCreater.getFilmsByGenre());

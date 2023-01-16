@@ -1,5 +1,5 @@
 import renderer from 'react-test-renderer';
-import App from "./App";
+import { App } from "./App";
 import React from "react";
 
 const films = [
@@ -17,13 +17,13 @@ const films = [
 
 describe(`App`, () => {
   it(`Should render correctly with movies titles array`, () => {
-    const tree = renderer
+    const app = renderer
       .create(
         <App
           films={films}
         />
       ).toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(app).toMatchSnapshot();
   });
 });
