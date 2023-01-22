@@ -1,4 +1,12 @@
-const films = [
+export const Movie = {
+  TITLE: `The Grand Budapest Hotel`,
+  GENRE: `Drama`,
+  DATE: `2014`,
+  POSTER: `img/the-grand-budapest-hotel-poster.jpg`,
+  CARD: `img/bg-the-grand-budapest-hotel.jpg`,
+};
+
+export const films = [
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
     img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
@@ -54,5 +62,3 @@ const films = [
     genre: `Thrillers`,
   },
 ];
-
-export default films;
